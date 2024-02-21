@@ -17,9 +17,9 @@
     "leaveFeedback": "留下您的反馈"
   },
   "aboutModal": {
-      "title": "关于 Superhero DEX",
-      "info": "有关 Superhero DEX 中使用的库和服务版本的信息",
-      "network": "网络"
+    "title": "关于 Superhero DEX",
+    "info": "有关 Superhero DEX 中使用的库和服务版本的信息",
+    "network": "网络"
   },
   "swap": {
     "title": "交换",
