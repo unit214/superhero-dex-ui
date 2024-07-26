@@ -116,8 +116,8 @@ export default {
       if (!this.sortBy) return this.rows;
       return this.rows.slice().sort((a, b) => {
         if (!this.sortBy || !this.sortDirection) return 0;
-        const aValue = this.tryParseInt(a[this.sortBy].value);
-        const bValue = this.tryParseInt(b[this.sortBy].value);
+        const aValue = this.tryParseFloat(a[this.sortBy].value);
+        const bValue = this.tryParseFloat(b[this.sortBy].value);
         if (aValue < bValue) return this.sortDirection === 'asc' ? -1 : 1;
         if (aValue > bValue) return this.sortDirection === 'asc' ? 1 : -1;
         return 0;
@@ -141,7 +141,7 @@ export default {
     this.sortDirection = this.initialSortDirection;
   },
   methods: {
-    tryParseInt(value) {
+    tryParseFloat(value) {
       if (value === undefined || value === null) return 0;
       const parsed = parseFloat(String(value).replace(/[$,]/g, ''));
       return Number.isNaN(parsed) ? 0 : parsed;

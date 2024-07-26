@@ -87,7 +87,7 @@ export default {
           text: this.formatDistance(new Date(Number(tx.microBlockTime)), new Date(), {
             addSuffix: true,
           }),
-          value: tx.microBlockTime,
+          value: tx.microBlockTime + tx.logIndex / 1000, // assuming there are not more than 1000 events per tx, after that we increase the ms, assuming microblocks are a few seconds apart we have millions of events
         },
       }));
     },
