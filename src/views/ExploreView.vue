@@ -124,8 +124,8 @@ export default defineComponent({
     pairToToken(pairAddress) {
       const pair = this.pairs.find((p) => p.address === pairAddress);
       return {
-        token0: this.tokenMap.get(pair.token0),
-        token1: this.tokenMap.get(pair.token1),
+        token0: this.tokenMap.get(pair?.token0) || { symbol: 'N/A' },
+        token1: this.tokenMap.get(pair?.token1) || { symbol: 'N/A' },
       };
     },
     setActiveTab(tab) {
